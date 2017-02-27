@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>计算缓存与methods中方法操作属性区别</h1>
+<div id="d1">
+    <ul>
+        <h3>模板中不易太多表达式，应使用属性计算功能</h3>
+        <li>通过属性计算后的的值为：{{jisuan}}</li>
+        <li>通过属性计算后的值：{{you}}</li>
+    </ul>
+</div>
+<h3>此方法不同于methods方法中的函数{{函数名（）}}，是他是依赖缓存的，如果属性值不改变不用重复计算</h3>
+<script src="js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#d1',
+    data:{msg:"我是Vue对象",msg1:"尤玉溪很厉害啊"},
+    computed:{
+        jisuan:function (){
+            return this.msg.concat("："+"这是我属性计算后的msg属性")
+        },
+        you:function(){
+            return this.msg1.replace("尤","罗")
+        }
+    }
+
+})
+</script>
+
+</body>
+</html>

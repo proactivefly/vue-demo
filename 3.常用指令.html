@@ -11,6 +11,8 @@
         <li v-if="seen">v-if指令用来判断是否移除该dom元素</li>
         <li v-bind:title="tt">v-bind指令能接受一个“参数”，在指令后以冒号指明。 v-bind:title="tt"</li>
         <li v-on:click="doSomething" style="cursor: pointer">v-on指令参数是事件名,例如v-on：click="doSomething"</li>
+        <li><label for="">v-model指令</label><input type="text" v-model="question"/></li>
+        <li>{{question}}</li>
     </ol>
 </div>
 
@@ -19,7 +21,8 @@
     var vm = new Vue({
         el: '#d1',
         data: {seen:'true',
-        tt:"我是通过v-bind指令添加参数形成的title属性"},
+        tt:"我是通过v-bind指令添加参数形成的title属性",
+        question:"你打什么我就和你一样"},
         methods:{
             doSomething:function(){
                 console.log(this)
