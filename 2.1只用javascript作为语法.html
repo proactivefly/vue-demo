@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="i1">
+    <ol type="1">
+        <h3>{}内和指令支持表达式方法表示</h3>
+        <li>{}内可对属性进行加减乘除{{number+1}}</li>
+        <li>{}内可截取属性字符串{{msg.slice(0,2)}}</li>
+        <li v-bind:id="'li'+id">v-bind:id="'li'+"中属性值也可以进行计算</li>
+        <li></li>
+    </ol>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#i1',
+    data:{number:1,
+    msg:"abcd",
+    id:1}
+})
+</script>
+
+</body>
+</html>

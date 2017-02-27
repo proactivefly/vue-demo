@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--一个vue实例只能绑定一个dom元素，对内部元素也有效-->
+<div class="c1">{{a}}</div>
+<!--v-once指令 一次性插值，当数据改变时，插值处的内容不会更新。-->
+<div class="c2" v-once>{{msg}}</div>
+<!--v-html指令-->
+<div id="d1">
+    <div v-html="q"></div>
+    <span v-bind:title="b">我是v-bind:属性名指令</span>
+
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: ".c1",
+        data: {a: "hello world"}
+    })
+    //    div.c2的vue实例
+    var vm1 = new Vue({
+        el: ".c2",
+        data: {msg: "helloworld1"}
+    })
+    //    v-html指令vue
+    var vm2 = new Vue({
+        el: "#d1",
+        data: {
+            q: "<h3>我是被当做html渲染进来的</h3>",
+            b: "我是v-bind：属性名指令绑定的属性"
+
+        }
+    })
+</script>
+
+</body>
+</html>

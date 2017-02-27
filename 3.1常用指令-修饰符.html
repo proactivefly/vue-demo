@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="s1">
+    <a href="#" v-on:submit.prevent="doSomething">修饰符v-on:submit.prevent阻止默认事件</a>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#s1',
+    methods:{
+        doSomething:function (){
+            document.querySelector('#s1>a').innerHTML='点即完成啦'
+        }
+    }
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li :title="msg">v-bind:title={{msg}}可简写为:title</li>
+        <li @click="doSomething">v-on:click="doSomething"可简写为@click</li>
+    </ul>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#d1',
+    data:{
+        msg:"我是v-bind指令简写后的架上的属性"
+    },
+    methods:{
+        doSomething:function(){
+            document.querySelector('#d1>ul>li:nth-child(2)').innerHTML='点击后的效果'
+        }
+    }
+})
+</script>
+
+</body>
+</html>

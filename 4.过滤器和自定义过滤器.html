@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1">
+    <ol>
+        <li>{{msg|foo}}</li>
+        <li></li>
+    </ol>
+    
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+//    过滤器是 JavaScript 函数，因此可以接受参数
+var vm=new Vue({
+    el:'#d1',
+    data:{
+            msg:"abcdefg"
+            },
+    filters:{
+        foo:function(value){
+            return value.concat("这是我的过滤器添加后的效果")
+        }
+
+    }
+})
+</script>
+
+</body>
+</html>
