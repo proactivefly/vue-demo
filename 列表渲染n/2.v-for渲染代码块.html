@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1">
+    <!--循环html块-->
+    <template v-for="item in items">
+        <h2>{{item.name}}</h2>
+        <p>{{item.age}}</p>
+    </template>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#d1",
+        data: {
+            items: [
+                {name:"丽丽",age:"12"},
+                {name:"丽丽1",age:"12"},
+                {name:"丽丽2",age:"12"},
+                {name:"丽丽3",age:"12"}
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>

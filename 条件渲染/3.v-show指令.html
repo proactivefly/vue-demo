@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="s1">
+    <p v-show="isShow">v-show指令</p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#s1',
+    data:{
+        isShow:true
+    }
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <h2>也支持ES6 v-for="..of.."</h2>
+        <li v-for="item in items">{{item}}</li>
+    </ul>
+    <div>
+        <ol>
+            <li v-for="(value,index) in items"> {{index+"对应"+value}}</li>
+        </ol>
+    </div>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:"#d1",
+    data:{
+        items:["老罗","锤子","坚果","柴静","李志","赵雷"]
+    }
+
+})
+</script>
+
+</body>
+</html>

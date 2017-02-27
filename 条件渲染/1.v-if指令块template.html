@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>template条件组</h1>
+
+<div id="s1">
+    <template v-if="tpl">
+        <h4>if</h4>
+        <h4>if</h4>
+        <h4>if</h4>
+    </template>
+    <template v-else-if="tp">
+        <h3>else-if</h3>
+        <h3>else-if</h3>
+        <h3>else-if</h3>
+    </template>
+    <template v-else>
+        <h3>else</h3>
+        <h3>else</h3>
+        <h3>else</h3>
+    </template>
+<!--tpl为true只显示if,tp为true只显示else-if 否则显示else-->
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#s1",
+        data: {
+            tpl: true
+        }
+    })
+</script>
+
+</body>
+</html>

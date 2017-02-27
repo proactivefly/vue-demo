@@ -5,23 +5,20 @@
     <title></title>
 </head>
 <body>
+<h2>当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测并添加相应的前缀。</h2>
 <div id="i1">
     <!--对象方法-->
     <p v-bind:style="{color:bgColor,fontSize:size}">效果是一样吗</p>
     <!--对象方法推荐-->
     <p v-bind:style="styleObject">效果是一样吗</p>
-    <!--数组方法-->
-    <p v-bind:style="[bgColor1,size]">效果是一样的</p>
 
-    <p></p>
 </div>
-
 <script src="../js/vue.js"></script>
 <script>
     var vm = new Vue({
         el: "#i1",
         data: {
-            bgColor: "red", size: "12px",bgColor1:"yellow",
+            bgColor: "red", size: "12px",
             styleObject: {color: "red", fontSize: "16px"}
         }
     })
