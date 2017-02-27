@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="i1">
+    <!--对象方法-->
+    <p v-bind:style="{color:bgColor,fontSize:size}">效果是一样吗</p>
+    <!--对象方法推荐-->
+    <p v-bind:style="styleObject">效果是一样吗</p>
+    <!--数组方法-->
+    <p v-bind:style="[bgColor1,size]">效果是一样的</p>
+
+    <p></p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#i1",
+        data: {
+            bgColor: "red", size: "12px",bgColor1:"yellow",
+            styleObject: {color: "red", fontSize: "16px"}
+        }
+    })
+</script>
+
+</body>
+</html>

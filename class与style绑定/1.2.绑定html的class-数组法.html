@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .active{...}
+        .normal{....}
+        .color{.....}
+    </style>
+</head>
+<body>
+<div id="s1">
+    <!--div始终绑定active和normal类，渲染结果为<div class="active normal">-->
+    <div v-bind:class="[isActive,isNormal]"></div>
+    <!--p始终绑定mormal类，但是color类需要判断-->
+    <p v-bind:class="[isColor?color:'' , isNormal]"></p>
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#s1',
+    data:{
+        isActive:"active",
+        isNormal:"normal",
+        isColor:3>2
+    }
+})
+</script>
+
+</body>
+</html>

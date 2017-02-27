@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #d1 {
+            transition: all .5s ease-in-out
+        }
+
+        .active {
+            background: #e4393c;
+            width: 100%;
+            height: 300px;
+        }
+
+        .normal {
+            background: #ddd;
+            width: 100px;
+            height: 100px;
+            position:absolute;
+            left:-100px;
+        }
+    </style>
+</head>
+<body>
+<div id="d1" v-bind:class="{active:isActive,normal:isNumal}">
+
+    <button v-on:click="foo">{{msg}}</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#d1",
+        data:{isActive: true, isNumal: false,msg:"惦记我"},
+        methods:{
+            foo:function () {
+                console.log("惦记我");
+                this.isActive = false;
+                this.isNumal=true
+
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
