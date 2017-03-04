@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ol id="i1">
+    <li v-for="item in a" v-bind:key="item.id">{{`${item}对应的id为${item.id}`}}</li>
+</ol>
+
+<script src=../js/vue.js></script>
+<script>
+var vm=new Vue({
+    el:"#i1",
+    data:{
+        a:{x:"小明",y:"小红",z:"小兰"}
+    }
+
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">
+    <button @click="hello(msg,$event)">点我</button>
+
+</div>
+<hr/>
+<div id="div2">
+    <!--阻止冒泡-->
+    <a href="#" v-on:click.stop="msg()">点击我v-on:click.stop="msg()</a>
+    <!--阻止默认行为-->
+    <a href="#" v-on:click.prevent="msg()">阻止默认行为v-on:click.prevent="msg()</a>
+    <!-- 只有修饰符，只用于阻止默认行为-->
+    <a href="#" v-on:click.prevent>只阻止默认行为v-on:click.prevent</a>
+    <!--阻止表单点击提交-->
+    <input type="submit" v-on:click.submit="msg()"/>
+    <!-- 事件修饰符可以串联-->
+    <button v-on:clicl.stop.prevent="msg()">事件修饰符串联</button>
+    <!-- 事件只在自己身上出发-->
+    <button @click.self="msg()">只在自身上出发，不包括子元素@click.self="msg()"</button>
+</div>
+
+<script src=../js/vue.js></script>
+<script>
+    var vm = new Vue({
+        el: '#div1',
+        data:{msg:"啊哈哈哈哈"},
+        methods: {
+            hello: function (msg, event) {
+                console.log(msg);
+                console.log(event);
+            }
+        }
+    });
+    var vv=new Vue({
+        el:'#div2',
+        data:{a:'我是小a'},
+        methods:{
+            msg:function(){
+                document.write="事件修饰符";
+            }
+        }
+    })
+</script>
+</body>
+</html>

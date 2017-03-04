@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="d1">
+<button v-on:click="counter+=1">点我啊</button>
+    <p>{{`鼠标被点击了${counter}下`}}</p>
+</div>
+
+<script src=../js/vue.js></script>
+<script>
+var vm=new Vue({
+    el:"#d1",
+    data:{
+        counter:1
+    }
+})
+</script>
+</body>
+</html>
