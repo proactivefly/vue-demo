@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="input-group">
+    单选框<input type="radio" v-model="msg" value="小富"/>
+    单选框<input type="radio"  v-model="msg" value="xiaoli"/>
+    <p>你选的是谁{{msg}}</p>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:".input-group",
+        data:{
+            msg:''
+        }
+    })
+</script>
+</body>
+</html>

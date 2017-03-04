@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h3>单选框只有一个值不可取消，v-bind:true-value失效</h3>
+    <div><input type="radio" v-model="sel" v-bind:value="a" /></div>
+    <p>值为{{sel}}</p>
+    <h3>多选框可绑定true和false值</h3>
+    <div>
+        <input type="checkbox" v-model="ss" v-bind:true-value="b" v-bind:false-value="c"/>
+        <p>{{ss}}</p>
+    </div>
+
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:"#app",
+    data:{a:"选上了",sel:'',ss:"",b:'多选框选上了',c:'没选上'}
+
+})
+</script>
+</body>
+</html>

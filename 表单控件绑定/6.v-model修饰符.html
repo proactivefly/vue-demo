@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h3{
+            boeder:1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h3>lazy表单控件失去焦点是才发生变化</h3>
+    <input type="text" v-model.lazy="msg"/>
+    <p>{{msg}}</p>
+    <h3>number把用户输入值自动转化为整数</h3>
+    <input type="number" v-model.number="a"/>
+    <p>{{a}}</p>
+    <h3>trim自动过滤首尾空格</h3>
+    <input type="text" v-model.trim="sp"/>
+    <p>{{sp}}</p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{
+        msg:'',
+        a:'',
+        sp:''
+    }
+})
+</script>
+</body>
+</html>

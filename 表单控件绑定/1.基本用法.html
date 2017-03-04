@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="i1">
+    <ul>
+        <li>文本域,一个属性值可以绑定到多个控件上控制</li>
+        <li>单行文本value值无效，多行文本插入值也无效</li>
+    </ul>
+    <input type="text" v-model="write" placeholder="请输入你想的人"/>
+    <textarea v-model="write"></textarea>
+    <p>你书写的内容是{{write}}</p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#i1",
+        data:{write:""}
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <select name="" id="" v-model="sel" multiple>
+        <option>a</option>
+        <option>b</option>
+        <option>c</option>
+        <option>d</option>
+        <option>e</option>
+    </select>
+<p>选择的是{{sel}}</p>
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{sel:[]}
+
+})
+</script>
+</body>
+</html>
