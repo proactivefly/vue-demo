@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+<span>{{msg}}</span>
+</div>
+
+<div id="app1">
+    <button @click="updata">{{message}}</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:"#app",
+    data:{msg:"123"}
+
+})
+    vm.msg="234";
+    console.log(vm.$el.textContent==='234');
+//全局Vue监听数据变化后函数
+    Vue.nextTick(function(){
+        console.log(vm.$el.textContent==='234')
+            })
+//    局部vue监听
+    var app2=new Vue({
+        el:'#app1',
+        data:function(){
+            return {'message':'没被改变'}
+        },
+        methods:{
+            updata:function(){
+                this.message="被改变了";
+                console.log(this.$el.textContent==='被改变了')
+                this.$nextTick(function(){
+                    console.log(this.$el.textContent==="被改变了")
+                })
+            }
+
+        }
+    })
+
+</script>
+</body>
+</html>

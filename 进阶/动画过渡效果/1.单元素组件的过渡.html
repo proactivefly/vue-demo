@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #transition div{
+            border:1px solid #e4393c;
+            width:500PX;
+            height:500PX;
+            background:#ddd;
+        }
+        /*transition组件提供的默认过渡效果*/
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s
+        }
+        .fade-enter, .fade-leave-active {
+            opacity: 0
+        }
+    </style>
+</head>
+<body>
+<div id="transition">
+    <button v-on:click="isShow">执行过渡</button>
+    <transition name="fade">
+        <div v-if="show"></div>
+    </transition>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:"#transition",
+    data:{show:true},
+    methods:{
+        isShow:function(){
+            console.log(this.show)
+            this.show=!this.show;
+        }
+    }
+})
+</script>
+</body>
+</html>

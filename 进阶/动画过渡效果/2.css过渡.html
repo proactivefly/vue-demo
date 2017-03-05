@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #app div{
+            width:500px;
+            height:500px;
+            background: #e4393c;
+        }
+        /*过渡样式*/
+        .slide-fade-enter-ative{
+            transition:all 0.8s linear;
+        }
+        .slide-fade-leave-active{
+            transition:all 0.8s ease;
+         }
+        .slide-fade-enter,.slide-fade-leave-active{
+            transform: translateX(200px);
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- 过渡控件-->
+    <button v-on:click="isShow">显示不显示</button>
+    <!-- 盛放过渡元素的容器-->
+    <transition name="slide-fade">
+        <div v-if="show">
+            <!--过渡的元素-->
+        </div>
+    </transition>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+var vm=new Vue({
+    el:'#app',
+    data:{show:true},
+    methods:{
+        isShow:function(){
+            this.show=!this.show
+        }
+    }
+})
+</script>
+</body>
+</html>
